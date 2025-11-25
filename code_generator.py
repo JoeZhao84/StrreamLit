@@ -121,7 +121,7 @@ def generate_python_code(question: str, df: pd.DataFrame) -> str:
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",  # or "gpt-4o" if you prefer
-        temperature=0,
+        temperature=0, # Temperature controls randomness, 0 = deterministic (always give the same answer)
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
